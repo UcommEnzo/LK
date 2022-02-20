@@ -1,5 +1,6 @@
 
-Скачать архив с проектом нажав Code -> Download ZIP или скачать любым другим удобным способом.
+Скачать архив с проектом [https://github.com/UcommEnzo/LK/archive/refs/heads/main.zip](https://github.com/UcommEnzo/LK/archive/refs/heads/main.zip)
+или нажав Code -> Download ZIP или скачать любым другим удобным способом.
 
 Скачать и установить NodeJS [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
