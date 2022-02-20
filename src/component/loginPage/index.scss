@@ -1,0 +1,65 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .LoginPageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 340px;
+    width: 280px;
+    margin-top: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgb(163, 163, 163);
+
+    .LoginPageNavMenu {
+      padding: 0 5px 0 5px;
+      .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light {
+        justify-content: space-between;
+      }::before{
+        display: none;
+      }
+      
+    }
+    .FormWrapper {
+      padding: 0 5px 0 5px;
+      margin-top: 10px;
+      .FormContainer {
+        .FormHeader {
+          display: flex;
+          justify-content: center;
+          margin: 0;
+        }
+
+        .ant-input {
+          margin-top: 2px
+        }
+        .SubmitContainer {
+          display: flex;
+          justify-content: center;
+          .ant-btn.ant-btn-submit {
+            margin-top: 10px;
+          }
+        }
+        .Errors {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          color: red;
+
+          .Validate {
+            display: flex;
+            justify-content: center;
+          }
+          .Responce {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+

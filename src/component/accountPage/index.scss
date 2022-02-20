@@ -1,0 +1,97 @@
+
+.AccountWrapper {
+  min-width: 100vw;
+  margin-top: 10px;
+  padding: 0px 10px 0px 10px;
+
+  .Header {
+    display: flex;
+    justify-content: space-between;
+
+    .SearchContainer {
+      display: flex;
+      .SearchContact {
+        min-width: 224px;
+        margin-right: 10px;
+      }
+    }
+
+    .Logout {
+
+      .Login{
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 570px) {
+    .Header {
+      flex-direction: column-reverse;
+      .SearchContainer {
+        display: flex;
+        .SearchContact {
+          max-width: 224px;
+          margin-right: 10px;
+        }
+      }
+      .Logout {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .SearchContainer {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .AccountContainer {
+      flex-direction: column;
+
+      .ContactsContainer {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .AccountContainer {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+  
+    .ContactsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .Contact {
+        margin-bottom: 2px;
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+    }
+  
+    .AddContactContainer {
+      min-width: 240px;
+
+      .FormContainer {
+        display: flex;
+        flex-direction: column;
+
+        .FormHeader {
+          text-align: center;
+        }
+        .SubmitContainer {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+        }
+      }
+      .Errors {
+        display: flex;
+        justify-content: center;
+        color: red;
+      }
+    }
+  }
+}
