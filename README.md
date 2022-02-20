@@ -8,7 +8,7 @@
 или
 WebStorm [https://www.jetbrains.com/ru-ru/webstorm/download/#section=windows](https://www.jetbrains.com/ru-ru/webstorm/download/#section=windows)
 
-В скачаном редакторе в терминале написать npm install и дождаться загрузки, после чего запустить клиент и сервер в разных окнах терминала командами ниже:
+В скачаном редакторе открыть разархивированную папку с проектом, в терминале написать npm install и дождаться загрузки, после чего запустить клиент и сервер в разных окнах терминала командами ниже:
 ### `npm start`
 Запуск клиента
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
