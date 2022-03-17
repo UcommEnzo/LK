@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   BrowserRouter,
   Routes,
@@ -10,13 +9,14 @@ import { useCookies } from 'react-cookie';
 import './App.scss';
 import AccountPage from './component/accountPage';
 import LoginPage from './component/loginPage';
-import { loginToAccount } from "./component/redux/reducers/ActionCreators"
+import { loginToAccount } from "./redux/reducers/ActionCreators.ts"
+import { useAppDispatch, useAppSelector } from './hooks/redux.ts';
 
 const App = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const [cookies, setCookie] = useCookies(['isAuth']);
-  const { isAuth } = useSelector(state => state.AuthReducer)
+  const { isAuth } = useAppSelector(state => state.AuthReducer)
 
   const setCookieIsAuth = (authData) => setCookie('isAuth', authData, { path: '/' })
 

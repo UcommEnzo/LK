@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { Input, Button, Card, Avatar } from 'antd';
 import './index.scss';
 import AddContactForm from './AddContactForm';
-import { logout } from '../redux/reducers/AuthReducer';
-import { getContacts } from '../redux/reducers/ActionCreators';
+import { logout } from '../../redux/reducers/AuthReducer.ts';
+import { getContacts } from '../../redux/reducers/ActionCreators.ts';
 import Contact from './contact';
 import noData from '../../assets/images/noData.png'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux.ts';
 
 const EmptyContacts = ({ }) => {
 
@@ -37,8 +36,8 @@ const EmptyContacts = ({ }) => {
 
 const Contacts = ({ userLogin, editableContacts }) => {
 
-  const dispatch = useDispatch()
-  const { isAuth } = useSelector(state => state.AuthReducer)
+  const dispatch = useAppDispatch()
+  const { isAuth } = useAppSelector(state => state.AuthReducer)
 
   useEffect(() => {
     isAuth && dispatch(getContacts(userLogin))
@@ -64,9 +63,9 @@ const Contacts = ({ userLogin, editableContacts }) => {
 
 const AccountPage = ({ setCookieIsAuth }) => {
 
-  const dispatch = useDispatch()
-  const { userLogin } = useSelector(state => state.AuthReducer)
-  const contacts = useSelector(state => state.ContactsReducer.contacts) || []
+  const dispatch = useAppDispatch()
+  const { userLogin } = useAppSelector(state => state.AuthReducer)
+  const contacts = useAppSelector(state => state.ContactsReducer.contacts) || []
   const [editableContacts, setEditableContacts] = useState(contacts)
   const [filter, setFilter] = useState('')
   const isPhone = Number(filter) * 0 === 0

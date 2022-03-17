@@ -1,13 +1,16 @@
+import { ContactsState } from './../../../models/IContacts';
 import { createSlice } from "@reduxjs/toolkit"
+
 import {
   getContacts,
   addContact,
   deleteContact,
   editContact
-} from './ActionCreators';
+  // @ts-ignore
+} from './ActionCreators.ts';
 
 
-const initialState = {
+const initialState: ContactsState = {
   contacts: [],
 
   getContactsInProgress: false,
@@ -37,8 +40,8 @@ export const contactSlice = createSlice({
       state.contacts = action.payload
     },
     [getContacts.rejected.type]: (state, action) => {
-      state.loginInProgress = false
-      state.loginError = action.payload
+      state.getContactsInProgress = false
+      state.getContactsError = action.payload
     },
 
     [addContact.pending.type]: (state) => {

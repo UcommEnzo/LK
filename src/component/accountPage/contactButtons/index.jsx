@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch } from "react-redux";
 import { EditTwoTone, DeleteTwoTone, SaveTwoTone } from '@ant-design/icons';
-import { deleteContact, editContact } from "../../redux/reducers/ActionCreators";
+import { deleteContact, editContact } from "../../../redux/reducers/ActionCreators.ts";
 
 
 export const EditButton = ({ onEdit }) => {

@@ -1,8 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { createAccount, loginToAccount } from './ActionCreators';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+// @ts-ignore
+import { createAccount, loginToAccount } from './ActionCreators.ts';
+import { AuthState } from "../../../models/IAuth";
 
-
-const initialState = {
+const initialState: AuthState = {
   isAuth: false,
   userLogin: '',
 
@@ -11,10 +12,6 @@ const initialState = {
 
   loginInProgress: false,
   loginError: '',
-
-  getContactsInProgress: false,
-  contacts: [],
-  getContactsError: '',
 }
 
 export const authSlice = createSlice({
@@ -29,13 +26,13 @@ export const authSlice = createSlice({
     [createAccount.pending.type]: (state) => {
       state.creatingInProgress = true
     },
-    [createAccount.fulfilled.type]: (state, action) => {
+    [createAccount.fulfilled.type]: (state, action: PayloadAction<string>) => {
       state.creatingInProgress = false
       state.creatingError = ''
       state.isAuth = true
       state.userLogin = action.payload
     },
-    [createAccount.rejected.type]: (state, action) => {
+    [createAccount.rejected.type]: (state, action: PayloadAction<string>) => {
       state.creatingInProgress = false
       state.creatingError = action.payload
     },
@@ -43,13 +40,13 @@ export const authSlice = createSlice({
     [loginToAccount.pending.type]: (state) => {
       state.loginInProgress = true
     },
-    [loginToAccount.fulfilled.type]: (state, action) => {
+    [loginToAccount.fulfilled.type]: (state, action: PayloadAction<string>) => {
       state.loginInProgress = false
       state.loginError = ''
       state.isAuth = true
       state.userLogin = action.payload
     },
-    [loginToAccount.rejected.type]: (state, action) => {
+    [loginToAccount.rejected.type]: (state, action: PayloadAction<string>) => {
       state.loginInProgress = false
       state.loginError = action.payload
     }

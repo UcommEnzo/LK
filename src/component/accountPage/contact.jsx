@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Card, Input } from 'antd';
 import { SaveButton, EditButton, DeleteButton } from './contactButtons';
-import { editContact } from "../redux/reducers/ActionCreators";
+import { editContact } from "../../redux/reducers/ActionCreators.ts";
 
 const ContactTitle = ({
   firstname,

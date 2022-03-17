@@ -1,13 +1,13 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Formik } from 'formik';
 import { Input, Button } from 'antd';
-import { addContact } from "../redux/reducers/ActionCreators";
+import { addContact } from "../../redux/reducers/ActionCreators.ts";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux.ts";
 
 const AddContactForm = ({ userLogin }) => {
   
-  const dispatch = useDispatch()
-  const { addContactInProgress, addContactError } = useSelector(state => state.ContactsReducer)
+  const dispatch = useAppDispatch()
+  const { addContactInProgress, addContactError } = useAppSelector(state => state.ContactsReducer)
 
   const validate = (values) => {
     const regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im

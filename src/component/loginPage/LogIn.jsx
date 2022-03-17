@@ -1,12 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Form from "../common/Form";
-import { loginToAccount } from "../redux/reducers/ActionCreators"
+import { loginToAccount } from "../../redux/reducers/ActionCreators.ts"
+import { useAppDispatch, useAppSelector } from "../../hooks/redux.ts";
 
 const Login = ({ setCookieIsAuth }) => {
 
-  const dispatch = useDispatch()
-  const { loginInProgress, login, loginError } = useSelector(state => state.AuthReducer)
+  const dispatch = useAppDispatch()
+  const { loginInProgress, login, loginError } = useAppSelector(state => state.AuthReducer)
 
   const validate = (values) => {
     const errors = {};
